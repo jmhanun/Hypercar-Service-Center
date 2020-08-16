@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hypercar service center</title>
+</head>
+<body>
+    <h2>Queue</h2>
+    <ul>
+    {% for k, v in queue.items %}
+    <li>
+        <div>{{ k }} queue: {{ v }} </div>
+    </li>
+    {% endfor %}
+    </ul>
+    <form method="post">{% csrf_token %}
+        <button type="submit">Process next</button>
+    </form>
+</body>
+</html>
